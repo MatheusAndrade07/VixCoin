@@ -1,0 +1,84 @@
+﻿@page "/cadastrarcategorias"
+
+<PageTitle>Cadastrar Categorias</PageTitle>
+<div class="container mt-5">
+    <div class="card border rounded shadow-lg">
+        <h5 class="card-header">Cadastro de Categorias</h5>
+        <div class="card-body">
+            <form>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome da Categoria:</label>
+                    <input type="text" class="form-control @NomeClass" id="nome" @bind="nome" placeholder="Digite o nome da categoria" @oninput="HandleNomeInput" @onblur="HandleNomeBlur">
+                    <div class="invalid-feedback">@nomeErrorMsg</div>
+                </div>
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição da Categoria:</label>
+                    <textarea class="form-control @DescricaoClass" id="descricao" @bind="descricao" rows="2" placeholder="Digite a descrição da categoria" @oninput="HandleDescricaoInput" @onblur="HandleDescricaoBlur"></textarea>
+                    <div class="invalid-feedback">@descricaoErrorMsg</div>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="ativa">
+                    <label class="form-check-label" for="ativa">Categoria Ativa</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string nome = "";
+    private string descricao = "";
+    private bool nomeInteragido = false;
+    private bool descricaoInteragida = false;
+    private bool nomeContemNumeros = false;
+    private bool descricaoContemNumeros = false;
+    private string nomeErrorMsg = "";
+    private string descricaoErrorMsg = "";
+
+    private string NomeClass => (nomeContemNumeros && nomeInteragido) ? "is-invalid" : (nomeInteragido ? "is-valid" : "");
+    private string DescricaoClass => (descricaoContemNumeros && descricaoInteragida) ? "is-invalid" : (descricaoInteragida ? "is-valid" : "");
+
+    private void HandleNomeInput(ChangeEventArgs e)
+    {
+        nome = e.Value.ToString();
+        nomeContemNumeros = ContemNumeros(nome);
+        if (nomeContemNumeros)
+        {
+            nomeErrorMsg = "O nome não pode conter números.";
+        }
+        else
+        {
+            nomeErrorMsg = "";
+        }
+    }
+
+    private void HandleDescricaoInput(ChangeEventArgs e)
+    {
+        descricao = e.Value.ToString();
+        descricaoContemNumeros = ContemNumeros(descricao);
+        if (descricaoContemNumeros)
+        {
+            descricaoErrorMsg = "A descrição não pode conter números.";
+        }
+        else
+        {
+            descricaoErrorMsg = "";
+        }
+    }
+
+    private void HandleNomeBlur(FocusEventArgs e)
+    {
+        nomeInteragido = true;
+    }
+
+    private void HandleDescricaoBlur(FocusEventArgs e)
+    {
+        descricaoInteragida = true;
+    }
+
+    private bool ContemNumeros(string texto)
+    {
+        return texto.Any(char.IsDigit);
+    }
+}
