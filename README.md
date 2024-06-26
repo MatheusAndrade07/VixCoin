@@ -6,7 +6,7 @@ O VixCoin é um projeto inovador de e-commerce que gamifica a experiência de co
 
 O VixCoin é um projeto inovador de e-commerce que gamifica a experiência de compra, permitindo aos usuários trocar "VixCoins" virtuais por produtos, cupons e outras recompensas. Através de um sistema de pontos e desafios, os clientes são incentivados a se envolver com a plataforma e a realizar compras com mais frequência.
 
-#Tecnologias Utilizadas
+# Tecnologias Utilizadas
 
 O desenvolvimento do VixCoin foi feito com as seguintes tecnologias:
 
