@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace VixCoin.Infra.Data
 {
-    using Metalcoin.Core.Domain;
     using Microsoft.EntityFrameworkCore;
     using System.Reflection.Emit;
-
-    namespace MetalCoin.Infra.Data
-    {
+    using VixCoin.Core.Domain;
+    
         public class AppDbContext : DbContext
         {
             public AppDbContext(DbContextOptions<AppDbContext> opcoes) : base(opcoes)
@@ -88,4 +86,3 @@ namespace VixCoin.Infra.Data
         }
     }
 
-}

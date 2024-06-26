@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VixCoin.Core.Abstracts;
+using VixCoin.Core.Enums;
 
 namespace VixCoin.Core.Domain
 {

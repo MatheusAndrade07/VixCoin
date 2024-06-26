@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VixCoin.Core.Dtos.Response;
+using VixCoin.Core.Interfaces.Repositories;
+using VixCoin.Core.Interfaces.Services;
+using VixCoin.Core.Dtos.Request;
+using VixCoin.Core.Domain;
 
 namespace VixCoin.Application.Services
 {
     public class ProdutoService : IProdutoService
     {
         private readonly IProdutoRepository _produtoRepository;
-        public ProdutoService(IProdutoaRepository repository)
+        public ProdutoService(IProdutoRepository repository)
         {
             _produtoRepository = repository;
         }

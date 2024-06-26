@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VixCoin.Core.Dtos.Request;
+using VixCoin.Core.Interfaces.Repositories;
+using VixCoin.Core.Interfaces.Services;
 
 namespace VixCoin.Api.Controllers
 {
@@ -30,7 +33,7 @@ namespace VixCoin.Api.Controllers
         [Route("{id:guid}")]
         public async Task<ActionResult> ObterUmaCategoria(Guid id)
         {
-            var produto = await _produtoaRepository.ObterPorId(id);
+            var produto = await _produtoRepository.ObterPorId(id);
             if (produto == null) return BadRequest("Produto não encontrado");
             return Ok(produto);
         }

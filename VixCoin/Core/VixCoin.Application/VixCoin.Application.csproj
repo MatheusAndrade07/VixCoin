@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VixCoin.Domain\VixCoin.Core.csproj" />
+  </ItemGroup>
+
 </Project>

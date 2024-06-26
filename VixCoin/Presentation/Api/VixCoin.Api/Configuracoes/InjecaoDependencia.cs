@@ -1,6 +1,7 @@
-﻿using VixCoin.Core.Interfaces.Repositories;
+﻿using VixCoin.Application.Services;
+using VixCoin.Core.Interfaces.Repositories;
 using VixCoin.Core.Interfaces.Services;
-
+using VixCoin.Infra.Data.Repositories;
 
 namespace VixCoin.Api.Configuracoes
 {

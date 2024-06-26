@@ -15,7 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\VixCoin.Application\VixCoin.Application.csproj" />
     <ProjectReference Include="..\..\..\Core\VixCoin.Domain\VixCoin.Core.csproj" />
+    <ProjectReference Include="..\..\..\Infra\VixCoin.Infra\VixCoin.Infra.csproj" />
   </ItemGroup>
 
 </Project>
